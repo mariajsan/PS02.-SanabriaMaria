@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="modelo_cafeteria" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="modelo_cafeteriaContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="productosSet" EntityType="modelo_cafeteria.productos" />
+    <EntitySet Name="pedidos" EntityType="modelo_cafeteria.pedidos" />
+    <AssociationSet Name="productospedidos" Association="modelo_cafeteria.productospedidos">
+      <End Role="productos" EntitySet="productosSet" />
+      <End Role="pedidos" EntitySet="pedidos" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="productos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" />
+    <Property Name="Disponible" Type="Int32" Nullable="false" />
+    <Property Name="PrecioUnitario" Type="Decimal" Nullable="false" />
+    <NavigationProperty Name="pedidos" Relationship="modelo_cafeteria.productospedidos" FromRole="productos" ToRole="pedidos" />
+  </EntityType>
+  <EntityType Name="pedidos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreCliente" Type="String" Nullable="false" />
+    <Property Name="FechaPedido" Type="DateTimeOffset" Nullable="false" />
+    <Property Name="NotaAdicional" Type="String" Nullable="false" />
+    <Property Name="Estatus" Type="String" Nullable="false" />
+    <NavigationProperty Name="productos" Relationship="modelo_cafeteria.productospedidos" FromRole="pedidos" ToRole="productos" />
+  </EntityType>
+  <Association Name="productospedidos">
+    <End Type="modelo_cafeteria.productos" Role="productos" Multiplicity="*" />
+    <End Type="modelo_cafeteria.pedidos" Role="pedidos" Multiplicity="*" />
+  </Association>
+</Schema>
