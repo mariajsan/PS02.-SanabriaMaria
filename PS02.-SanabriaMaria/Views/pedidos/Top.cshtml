@@ -1,0 +1,26 @@
+﻿@model IEnumerable<PS02._SanabriaMaria.Models.pedidos>
+
+@{
+    ViewBag.Title = "Top";
+}
+
+<h2>Top</h2>
+
+@foreach (var item in ViewBag.Top) { 
+    <div class="mb-3" style="width: 15rem; margin:0.5rem;">
+        <img class="card-img-top" src="@Url.Action("GetImage", "Products", new { id=item.Products.Id})" alt="Alternate Text" />
+        <div class="card border-bottom-success shadow">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">$@item.Producto.Price</div>
+                        <div class="h5 mb=0 font-weight-bold text-gray-800">@item.Producto.Name</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa-address-book fa-hotjar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -6,10 +6,12 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.Owin.Security.DataHandler.Encoder;
 using PS02._SanabriaMaria.Models;
 
 namespace PS02._SanabriaMaria.Controllers
 {
+    [Authorize]
     public class pedidosController : Controller
     {
         private pedidosdbcontext db = new pedidosdbcontext();
@@ -17,6 +19,15 @@ namespace PS02._SanabriaMaria.Controllers
         // GET: pedidos
         public ActionResult Index()
         {
+            var pedtop = db.Pedidos.ToList();
+            var toppedidos = new List<pedidos>();
+
+            foreach (var item in pedtop)
+                if (item.Quantity >= 10) {
+                    toppedidos.Add(item);
+                }
+
+            ViewBag.Top = toppedidos;
             var pedidos = db.Pedidos.Include(p => p.productos);
             return View(pedidos.ToList());
         }

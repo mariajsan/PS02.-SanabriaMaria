@@ -10,11 +10,13 @@ using PS02._SanabriaMaria.Models;
 
 namespace PS02._SanabriaMaria.Controllers
 {
+    [Authorize]
     public class productosController : Controller
     {
         private pedidosdbcontext db = new pedidosdbcontext();
 
         // GET: productos
+        [HttpPost]
         public ActionResult Index()
         {
             return View(db.productos.ToList());

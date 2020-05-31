@@ -125,3 +125,7 @@ C:\Users\Admin\source\repos\PS02.-SanabriaMaria\PS02.-SanabriaMaria\obj\Debug\PS
 C:\Users\Admin\source\repos\PS02.-SanabriaMaria\PS02.-SanabriaMaria\obj\Debug\PS02.-SanabriaMaria.dll
 C:\Users\Admin\source\repos\PS02.-SanabriaMaria\PS02.-SanabriaMaria\obj\Debug\PS02.-SanabriaMaria.pdb
 C:\Users\Admin\source\repos\PS02.-SanabriaMaria\PS02.-SanabriaMaria\obj\Debug\PS02.-SanabriaMaria.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\PS02.-SanabriaMaria\PS02.-SanabriaMaria\obj\Debug\PS02._SanabriaMaria.Migrations.InitialCreate.resources
+C:\Users\Admin\source\repos\PS02.-SanabriaMaria\PS02.-SanabriaMaria\obj\Debug\PS02.-SanabriaMaria.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\PS02.-SanabriaMaria\PS02.-SanabriaMaria\obj\Debug\PS02._SanabriaMaria.Migrations.InitialCreate1.resources
+C:\Users\Admin\source\repos\PS02.-SanabriaMaria\PS02.-SanabriaMaria\obj\Debug\PS02._SanabriaMaria.Migrations.InitialCreate2.resources

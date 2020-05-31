@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace PS02._SanabriaMaria.Controllers
 {
+    [Authorize]
     public class PrincipalController : Controller
     {
         // GET: Principal

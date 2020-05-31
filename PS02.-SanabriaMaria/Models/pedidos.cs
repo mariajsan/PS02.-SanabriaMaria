@@ -23,6 +23,9 @@ namespace PS02._SanabriaMaria.Models
 
         [Display(Name = "Estado")]
         public string Status { get; set; }
+
+        [Display(Name = "Cantidad")]
+        public int Quantity { get; set; }
         public int IdProducto { get; set; }
         [ForeignKey("IdProducto")]
         public virtual productos productos { get; set; }
